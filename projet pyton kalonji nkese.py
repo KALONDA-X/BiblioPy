@@ -1,23 +1,30 @@
+def recherche_sequentiel(books, key, value):
+    return[book for book in books if book.get(key, '') == value]
 
+def recherche_dichotomique(books, key, value):
+    debut,fin = 0,len(books)-1
+    result =[]
 
+    while debut <= fin:
+        millieu =(debut+fin)//2
+        millieu_val = books[millieu][key]
+        value = value
 
-def recherche_sequentiel(liste,element):
-     for i in range(len(liste)):
-         if liste[i] == element:
-             return  (element,i)
-         
-             
-     return print("aucun resultat")
-
-def recherche_dichotomique(liste,element):
-    debut = 0
-    fin = len(liste)-1
-    while debut <= fin :
-        milieu =(debut + fin)//2
-        if liste[milieu]== element:
-            return i
-        elif milieu < element:
-            debut = milieu+1
+        if millieu_val == value:
+           result.books[millieu]
+           i = mid-1
+           while i >= 0 and books[i][key] == value:
+                 result.insert(0,books[i])
+                 i-= 1
+           i= millieu+1
+           while i < len(books) and books[i][key] == value:
+               result.append(books[i])
+               i+=1
+           break
+        elif millieu_val < value :
+           debut = millieu+1
         else:
-            fin = milieu-1
-    return none 
+           fin = millieu-1
+
+
+    return result
